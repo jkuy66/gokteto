@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jokteo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jokteo
+  template:
+    metadata:
+      labels:
+        app: jokteo
+    spec:
+      containers:
+      - image: okteto.dev/jokteo:latest
+        name: jokteo
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "d6aea68f-df3a-4b52-afd4-2d46961886dc"
+        - name: Vless_Path
+          value: "/fgh76u4wrgjyu"
+        - name: Vmess_UUID
+          value: "d6aea68f-df3a-4b52-afd4-2d46961886dc"
+        - name: Vmess_Path
+          value: "/fdbjui75u56ehtd"
+        - name: Share_Path
+          value: "/v2link"
