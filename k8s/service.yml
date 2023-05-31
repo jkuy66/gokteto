@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jokteo
+  name: gokteto
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "jokteo"
+  - name: "gokteto"
     port: 8080
   selector:
-    app: jokteo
+    app: gokteto
